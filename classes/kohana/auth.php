@@ -110,7 +110,9 @@ abstract class Kohana_Auth {
 			$this->_session->delete($this->_config['session_key']);
 
 			// Regenerate session_id
-			$this->_session->regenerate();
+			// $this->_session->regenerate();
+			// Needs to restart the session not regenerate
+			$this->_session->restart();
 		}
 
 		// Double check
